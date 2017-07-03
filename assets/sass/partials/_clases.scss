@@ -1,0 +1,56 @@
+.container {
+  position: relative;
+   h3{
+       @include roboto_bold(20px, $blanco);
+       text-transform: uppercase;
+    }
+
+}
+
+.col-sm-6 {
+  position: relative;
+}
+.min-height{
+  min-height: 470px;
+      @media(max-width: 768px){
+       min-height: 370px;
+  }
+}
+%btn_amarillo {
+  background-color: $amarillo;
+  border: none;
+  @include black(30px, $negro);
+  text-transform: uppercase;
+}
+.texto_amarillo{
+    color: $amarillo;
+}
+
+%relative {
+  position: relative;
+}
+
+//centra verticalmente el modal
+//de bootstrap
+
+// .modal {
+//   text-align: center;
+//   padding: 0!important;
+// }
+
+// .modal:before {
+//   content: '';
+//   display: inline-block;
+//   height: 100%;
+//   vertical-align: middle;
+//   margin-right: -4px;
+// }
+
+// .modal-dialog {
+//   display: inline-block;
+//   text-align: left;
+//   vertical-align: middle;
+// }
+
+
+

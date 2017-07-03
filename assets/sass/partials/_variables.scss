@@ -1,0 +1,38 @@
+$amarillo : #fbe33b;
+$rojo: #8b0000;
+$negro: #090909;
+$blanco: #fff3df;
+$burdeo: #860000;
+$gris: #9a9a9a;
+$rosado: #ff726d;
+$coral: #DD2B2E;
+
+// font stacks
+
+  @mixin black($size, $color) {
+    font-family: 'nexa_black', Helvetica, Arial, sans-serif;
+    font-size: $size;
+    color: $color;
+  }
+  @mixin book($size, $color){
+  font-family: 'nexa_book', Helvetica, Arial, sans-serif;
+  font-size: $size;
+  color: $color;
+  }
+    @mixin roboto_light($size, $color){
+    font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+     font-size: $size;
+    color: $color;
+
+  }
+
+
+   @mixin roboto_bold($size, $color){
+    font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+     font-size: $size;
+    color: $color;
+
+  }
+

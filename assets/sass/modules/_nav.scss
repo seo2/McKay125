@@ -1,0 +1,99 @@
+.navbar-toggle{
+  z-index: 1000;
+
+}
+
+//nav
+.navbar-default{
+  margin-bottom: 0;
+ // background-color: $rojo;
+  min-height: 80px;
+    background: url(../img/bg_nav.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+     @media (max-width: 767px){
+          background: none;
+          background-color: #8b0000;
+          border: none;
+          height: 400px;
+          }
+}
+
+
+#navbar{
+  position: relative;
+  margin-top: 20px;
+      .rrss{
+       position: absolute;
+       @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px) 
+        and (orientation : portrait) { 
+            top: 8px;
+         }
+        @media (max-width: 767px){
+              font-size: 16px;
+
+              @include centerer(true, false);
+              bottom: -40px;
+          }
+    
+        .fa-lg{
+            @media (max-width: 768px){
+              font-size: 16px;
+              }
+          
+          i{
+            &.fa{
+              color: white;
+            }
+          }
+        }
+      
+      }
+      ul#main_nav{
+
+
+          li{
+              
+              
+              @media (min-width: 767px){
+                  padding: 0 10px;
+               &:first-child{
+                 padding-left: 0;
+               }
+               &:last-child{
+                 padding-right: 0;
+               }
+                  .separador{
+                      background: url(../img/separador.svg) no-repeat;
+                      background-size: cover;
+                      background-position: bottom center; 
+                      width: 6px;
+                      height: 7px;
+                      @include centerer(false, true);
+                      right: 0;
+                  }
+              }
+              @media(max-width:768px){
+                    padding: 0;
+              }
+         
+            a{
+              font-size: 16px;
+              color: white;
+              // @media (max-width: 768px){
+              // font-size:14px ;
+              // }
+            }
+            &.active{
+              a{
+                background-color: transparent;
+
+              }
+            }
+          }
+       
+      }
+
+}

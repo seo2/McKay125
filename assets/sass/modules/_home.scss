@@ -1,0 +1,185 @@
+body{
+  background: url(../img/bg_lg.jpg) no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+}
+
+.box_codigo{
+    max-width:910px;
+    position: relative;
+    background: url(../img/huincha_codigo_lg.png) no-repeat;
+    height: 150px;
+    margin-bottom: 10px;
+    padding: 20px;
+ 
+   #img_code {
+      position: absolute;
+      right:-46px;
+      top: -17px;
+      width: 194px;
+      height: 175px;
+   
+   }
+    form#form_codigo {
+      h3{
+        @include black(50px, $blanco);
+        text-transform: uppercase;
+        float: left;
+        margin: 0;
+        padding: 0;
+       
+      }
+      .caja_arriba {
+        width: 720px;
+        @media (max-width:768px){
+            width: 100%;
+         }
+          .input_codigo{
+            float: right;
+            margin-top: 0;
+            background-color: #ebebeb;
+            padding: 7px;
+            border-radius: 4px;
+              .form-group{
+                .form-control{
+                  text-align: center;
+                }
+              }
+            @media (max-width:768px){ 
+               float: left;
+
+            }
+          }
+
+      }
+      .caja_abajo{
+         @media (max-width:768px){
+            width: 100%;
+         }
+  
+        h3{
+          font-size: 40px;
+           float: left;
+            @media (max-width:768px){
+               font-size: 30px;
+          }
+        }
+          .btn_amarillo{
+            @extend %btn_amarillo;
+            font-size: 20px;
+            margin-left: 6px;
+          }
+
+          .checkbox{
+            text-align: center;
+            label{
+              font-size: 9px;
+              color: $amarillo;
+              float: left;
+              min-height: 14px;
+            }
+        
+         
+          }
+          
+          // @media(max-width:768px){
+          //     .input_codigo{
+          //       float: left;
+          //       margin-top: 0;
+          //       background-color: #ebebeb;
+          //       padding: 7px;
+          //       border-radius: 4px;
+          //         .form-group{
+          //           .form-control{
+          //             text-align: center;
+          //           }
+          //         }
+             
+          //     }
+          // }
+
+
+      } //caja abajo
+
+    }
+ #img_huincha_texto{
+  position: absolute;
+  left: 0;
+  bottom: -35px;
+
+ }
+} // box_codigo
+
+.box_codigo_xs{
+      form#form_codigo_xs{
+
+      @media(max-width:768px){
+          .input_codigo{
+            margin-top: 0;
+            background-color: #ebebeb;
+            padding: 7px;
+            border-radius: 4px;
+            @media (max-width:767px){
+              padding: 20px 0 5px 0;
+            }
+              .form-group{
+                .form-control{
+                  text-align: center;
+                }
+              }
+         
+          }
+      }
+          .checkbox{
+            text-align: left;
+            label{
+              font-size: 14px;
+              color: $amarillo;
+              float: left;
+              min-height: 14px;
+              margin: 5px 0;
+            }
+          }
+          
+        .btn_amarillo{
+          @extend %btn_amarillo;
+                 margin: 30px auto;
+          @media(max-width:768px){
+              width: 100%;
+              font-size: 30px;
+          }
+        }
+      }
+
+} // box codigo XS
+
+
+
+.box_ganador {
+      max-width:50%;
+      border-radius: 20px;
+      min-height: 270px;
+      background-color: $burdeo;
+      margin-top: 60px;
+      position: relative;
+      text-align: center;
+      box-shadow: 2px 2px 16px 7px rgba(0,0,0,0.25);
+      @media(max-width:768px){
+          max-width: 90%;
+      }
+      .text {
+        @include centerer(true, true);
+        width: 90%;
+        h3{
+            @include black(30px, $amarillo);
+            text-transform: uppercase;
+        }
+        h4{
+          @include book(50px, white);
+          text-transform: uppercase;
+          letter-spacing: 4px;
+        }
+      }
+      
+
+} // box_ganador

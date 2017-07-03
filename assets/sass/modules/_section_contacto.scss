@@ -1,0 +1,86 @@
+section.contacto{
+  margin-top: 50px;
+
+  
+    h3{
+       @include roboto_bold(24px, $blanco);
+       text-transform: uppercase;
+       margin-left: 15px;
+    }
+
+
+    .content_contacto{
+
+        background: url(../img/bg_que_gano_lg.jpg) no-repeat;
+        background-size: cover;
+        background-position: center top;
+        margin-bottom: 20px;
+        position: relative;
+        padding: 30px;
+          @media(max-width: 768px){
+                padding: 20px 20px 40px 20px;
+                margin-bottom: 0;
+        }
+
+        .heading_contacto{
+            h3{
+                @include black(50px, white);
+                text-transform: uppercase;
+                line-height: 55px;
+                max-width: 644px;
+                text-align: center;
+                margin: 0 auto;
+                    @media(max-width: 768px){
+                     font-size: 40px;
+                     line-height: 42px;
+                }
+            }
+            p{
+                @include book(24px, white );
+                text-transform: uppercase;
+                line-height: 16px;
+                text-align: center;
+                margin: 20px 0 30px 0;
+                letter-spacing: 4px;
+                    @media(max-width: 768px){
+                      font-size: 25px;
+                      line-height: 26px;
+                }
+            }
+          } // heading contacto
+     
+          form#main_contact{
+                .form-group{
+                    text-align: center;
+                      label{
+                        @include roboto_bold(16px, white);
+                        text-transform: uppercase;
+
+                      }
+                      textarea{
+                        text-align: left;
+                        resize: none;
+                      }
+
+                }
+
+
+
+              .btn_amarillo{
+               @extend %btn_amarillo;
+               margin-right: 15px;
+               float:right;
+               @media(max-width: 768px){
+                margin-right: auto;
+                float: none;
+                width: 100%;
+
+               }
+              }
+
+          }
+    
+    } //content contacto
+
+} // end contacto
+

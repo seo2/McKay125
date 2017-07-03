@@ -1,0 +1,84 @@
+section.que_gano{
+  margin-top: 50px;
+  
+    .content_que_gano{
+      background: url(../img/bg_que_gano_lg.jpg) no-repeat;
+      background-size: cover;
+      background-position: center;
+      min-height: 500px;
+      width: 100%;
+      position: relative;
+          @media(max-width: 768px){
+       padding: 20px 20px 50px 20px;
+      }
+    
+            img{
+              @include centerer(true, true);
+              left: 54%;
+              top:43%;
+            }
+          .text_que_gano{
+                  @include centerer(true, true);
+                  text-align: center;
+                  .nota{
+                    p{
+                      @include roboto_bold(16px, white);
+                      line-height: 16px;
+                      margin-top: 20px;
+                      text-transform: uppercase;
+                    }
+                   
+                  }
+                .texto_blanco_bold{
+                        @include black(25px, white);
+                         text-transform: uppercase;
+                         line-height: 24px;
+                        //     @media(max-width: 768px){
+                        //     font-size: 14px;
+                        // }
+                  }
+              .texto_blanco_black{
+                    @include black(60px, white);
+                    text-transform: uppercase;
+                    line-height: 55px;
+                    // @media(max-width: 768px){
+                    //     font-size: 36px;
+                    // }
+              }
+              .texto_amarillo_black{
+                @include black(50px, $amarillo);
+                text-transform: uppercase;
+                line-height: 55px;
+                    @media(max-width: 768px){
+                    font-size: 38px;
+                    line-height: 42px;
+                }
+
+              }
+              .text_blanco_med{
+                    @include book(23px, white );
+                    text-transform: uppercase;
+                    line-height: 16px;
+                    // @media(max-width: 768px){
+                    //     font-size:28px;
+                    //     line-height: 30px;
+                    // }
+              }
+        
+       
+      
+        }
+
+    } //content que gano
+    .huincha_texto{
+      position: absolute;
+      background: url(../img/huincha_texto.png) no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 820px;
+      height: 27px;
+      bottom: 26px;
+      display: block;
+    }
+} // end que gano
+

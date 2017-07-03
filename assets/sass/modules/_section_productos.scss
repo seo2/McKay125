@@ -1,0 +1,140 @@
+section.productos{
+  margin-top: 50px;
+
+ 
+    .content_productos{
+
+     //   background: url(../img/bg_que_gano_lg.jpg) no-repeat;
+       // background-size: cover;
+        //background-position: center top;
+        margin-bottom: 20px;
+        position: relative;
+        padding: 30px;
+        max-width: 960px;
+        margin: 0 auto;
+          @media(max-width: 768px){
+                padding: 20px 20px 40px 20px;
+                margin-bottom: 0;
+        }
+
+        .heading_productos{
+            h3{
+                @include black(35px, white);
+                text-transform: uppercase;
+                line-height: 32px;
+                max-width: 644px;
+                text-align: center;
+                margin: 0 auto;
+                    @media(max-width: 768px){
+                     font-size: 26px;
+                     line-height: 25px;
+                }
+            }
+            // p{
+            //     @include book(24px, white );
+            //     text-transform: uppercase;
+            //     line-height: 16px;
+            //     text-align: center;
+            //     margin: 20px 0 30px 0;
+            //     letter-spacing: 4px;
+            //         @media(max-width: 768px){
+            //           font-size: 25px;
+            //           line-height: 26px;
+            //     }
+            // }
+          } // heading productos
+     .slider_productos{
+          margin: 30px 0;
+       .item{
+        position: relative;
+         img{
+        //  @include centerer(true, true);
+           max-width: 500px;
+           max-height: 500px;
+            @media(max-width: 768px){
+            max-width: 400px;
+               // max-height: none;
+            }
+           @media(max-width: 767px){
+            max-width: 200px;
+               // max-height: none;
+            }
+         }
+       }
+       .owl-nav{
+         &.disabled {
+           display: none;
+         }
+       }
+
+       // .owl-dots {
+       //   position: absolute;
+       //   @include centerer(true, false);
+       // bottom: 10px;
+       //   .owl-dot {
+       //         span {
+       //             border: 3px solid white;
+       //             background: transparent;
+       //             border-radius: 50px;
+       //             height: 15px;
+       //             width: 15px;
+       //             cursor: pointer;
+       //             @media(max-width: 767px){
+       //                 margin-left: 5px;
+       //                 margin-right: 5px;
+       //             }
+       //           }
+       //     }
+       //     .owl-dot.active {
+       //         span {
+       //           background-color: $amarillo;
+       //         }
+       //     }
+
+       //   } // dots
+
+         .owl-next, .owl-prev {
+                width:45px;
+                height: 42px;
+                position: absolute;
+                text-indent: -9999px;
+                top: 50%;
+               margin-top: -21px;
+                cursor:pointer;
+               // @include transition(all 0.2s ease-in-out);
+                   &:hover {
+                    background-color: transparent;
+                    opacity: 0.5;
+                  }
+           
+         }
+
+          .owl-next {
+              background: url(../img/next.png) no-repeat !important;
+              right: 30px;
+                  @media (max-width:1024px){
+                    right: 30px;
+                    margin-top: -30px !important;
+                }
+                 @media (max-width:768px){
+                    right: 0px;
+                }
+          }
+          .owl-prev {
+              background: url(../img/prev.png) no-repeat !important;
+              left: 30px;
+              @media (max-width:1024px){
+                  margin-top: -30px !important;
+              }
+                @media (max-width:768px){
+                    left: 0px;
+                }
+          }
+
+     }
+
+    
+    } //content productos
+
+} // end productos
+

@@ -1,0 +1,189 @@
+
+section.ingreso_datos{
+  min-height: 300px;
+  margin-top: 30px;
+  background: url(../img/bg_form_datos.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 20px 0;
+  h3{
+     @include black(30px, white);
+     text-align: center;
+     text-transform: uppercase;
+     margin-bottom: 10px;
+  }
+  #form_datos{
+          @media(max-width:768px){
+         
+            padding: 0 15px 30px 15px;
+            
+          }
+      .box_edad {
+        min-height: 40px;
+        background-color: rgba(0,0,0,0.3);
+        padding: 10px 15px 3px 15px;
+        margin-bottom: 30px;
+        p{
+          @include roboto_bold(25px, white);
+          text-transform: uppercase;
+          display: inline-block;
+          margin: 0 70px 0 0px;
+           @media(max-width:768px){
+                font-size: 16px;
+                margin-right: auto;
+                margin-left: auto;
+                margin-bottom: 10px;
+            }
+        }
+    
+   
+          label{
+            @include roboto_bold(25px, white);
+            text-transform: uppercase;
+            line-height: 25px;
+            &.radio-inline{
+              margin-top: -16px;
+                  @media(max-width:768px){
+                  margin-top: -8px;
+                  margin-left: 6px;
+                 }
+
+            }
+                @media(max-width:768px){
+                font-size: 20px;
+              
+            }
+          }
+
+  
+  
+      }
+
+      .form-group{
+        padding: 0 20px;
+        @media(max-width:768px){
+          text-align: center;
+        }
+          label{
+            @include roboto_bold(13px, white);
+            text-transform: uppercase;
+              @media (max-width:768px){
+                    font-size: 18px;
+                 }
+          }
+          .form-control{
+              width: 100%;
+              float: right;
+
+          }
+
+      }
+
+  }
+    .btn_amarillo{
+            @extend %btn_amarillo;
+            font-size: 20px;
+                @media(max-width:768px){
+                  margin-top: 50px;
+                  width: 90%;
+            
+              }
+        
+          }
+
+    .box_slider {
+      @media(max-width:768px){
+       margin-top: 30px;
+      }
+      p{
+           @include roboto_light(15px, white);
+           text-transform: uppercase;
+           text-align: center;
+      }
+      .slider_categoria {
+        .item{
+          img{
+            max-width: 120px;
+          }
+          p{
+              @include roboto_bold(18px, white);
+              text-transform: uppercase;
+          }
+        }
+        .owl-nav{
+          &.disabled {
+            display: none;
+          }
+        }
+
+        .owl-dots {
+          position: absolute;
+          @include centerer(true, false);
+         // bottom: 10px;
+          .owl-dot {
+                span {
+                    border: 3px solid white;
+                    background: transparent;
+                    border-radius: 50px;
+                    height: 15px;
+                    width: 15px;
+                    cursor: pointer;
+                    @media(max-width: 767px){
+                        margin-left: 5px;
+                        margin-right: 5px;
+                    }
+                  }
+            }
+            .owl-dot.active {
+                span {
+                  background-color: $amarillo;
+                }
+            }
+
+          } // dots
+
+          .owl-next, .owl-prev {
+                 width:45px;
+                 height: 42px;
+                 position: absolute;
+                 text-indent: -9999px;
+                 top: 50%;
+                margin-top: -21px;
+                 cursor:pointer;
+                // @include transition(all 0.2s ease-in-out);
+                    &:hover {
+                     background-color: transparent;
+                     opacity: 0.5;
+                   }
+          }
+
+           .owl-next {
+               background: url(../img/next.png) no-repeat !important;
+               right: 30px;
+                   @media (max-width:1024px){
+                     right: 30px;
+                     margin-top: -30px !important;
+                 }
+                  @media (max-width:768px){
+                     right: 10px;
+                 }
+           }
+           .owl-prev {
+               background: url(../img/prev.png) no-repeat !important;
+               left: 30px;
+               @media (max-width:1024px){
+                   margin-top: -30px !important;
+               }
+                 @media (max-width:768px){
+                     left: 10px;
+                 }
+           }
+
+      }
+    
+
+    }
+
+
+}
+

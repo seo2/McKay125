@@ -1,0 +1,104 @@
+.close{
+      position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 40px;
+    opacity: 1;
+    color: white;
+
+}
+#modal_mensaje, #modal_instawin{
+  .modal-content{
+    border-radius: 0;
+    text-align: center;
+
+    .modal-body{
+      padding-top: 100px;
+      padding-bottom: 30px;
+      background: url(../img/bg_modal_mensaje.jpg) no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      .mensaje{
+        margin-bottom:30px;
+        p{
+          margin: 0;
+          padding: 0;
+        }
+              .texto_blanco{
+                   @include book(25px, white);
+                   text-transform: uppercase;
+              }
+              .texto_amarillo_large{
+                  @include black(60px, $amarillo );
+                  text-transform: uppercase;
+                  line-height: 60px;
+              }
+              .small{
+                  @include book(13px, white );
+                  text-transform: uppercase;
+              }
+              .texto_amarillo_small{
+                  @include black(40px, $amarillo);
+                  text-transform: uppercase;
+                  line-height:38px ;
+              }
+
+      }
+
+    }
+    .modal-footer{
+        text-align: center;
+        background-color: #be0002;
+         @include roboto_bold(25px, white);
+         text-transform: uppercase;
+         border-top: none;
+
+    }
+  }
+}
+
+#modal_instawin{
+  .modal-content{
+
+    .modal-body{
+       // padding-top: 90px;
+      padding-bottom: 30px;
+      background: url(../img/bg_modal_instawin.jpg) no-repeat;
+
+      .texto_blanco_large {
+            @include black(50px, white);
+            text-transform: uppercase;
+            @media(max-width: 768px){
+                font-size: 36px;
+            }
+      }
+      .texto_blanco{
+            @include book(36px, white );
+            text-transform: uppercase;
+            line-height: 33px;
+            @media(max-width: 768px){
+                font-size:28px;
+                line-height: 30px;
+            }
+      }
+      .texto_blanco_med{
+            @include book(16px, white );
+            text-transform: uppercase;
+            line-height: 24px;
+            @media(max-width: 768px){
+                font-size: 14px;
+            }
+      }
+      #pack_galletas{
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+
+    }
+    .modal-footer{
+      font-size: 20px;
+
+    }
+  }
+}

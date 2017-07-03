@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'nexa_book';
+    src: url('../fonts/nexa-book-webfont.woff2') format('woff2'),
+         url('../fonts/nexa-book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'nexa_black';
+    src: url('../fonts/nexablack-webfont.woff2') format('woff2'),
+         url('../fonts/nexablack-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

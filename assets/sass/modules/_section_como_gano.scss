@@ -1,0 +1,186 @@
+section.como_gano{
+  margin-top: 50px;
+   h3{
+       @include roboto_bold(24px, $blanco);
+       text-transform: uppercase;
+       margin-left: 15px;
+    }
+
+
+ 
+    .content_como_gano{
+
+        background: url(../img/bg_que_gano_lg.jpg) no-repeat;
+        background-size: cover;
+        background-position: center top;
+        margin-bottom: 20px;
+        position: relative;
+        padding: 20px 0 0 0;
+          @media(max-width: 768px){
+                padding: 20px;
+                margin-bottom: 0;
+        }
+
+        .heading_como_gano{
+            h3{
+                @include black(50px, white);
+                text-transform: uppercase;
+                line-height: 55px;
+                max-width: 644px;
+                text-align: center;
+                margin: 0 auto;
+                    @media(max-width: 768px){
+                     font-size: 40px;
+                     line-height: 42px;
+                }
+            }
+            p{
+                @include book(24px, white );
+                text-transform: uppercase;
+                line-height: 16px;
+                text-align: center;
+                margin: 20px 0 30px 0;
+                letter-spacing: 4px;
+                    @media(max-width: 768px){
+                      font-size: 25px;
+                      line-height: 26px;
+                }
+            }
+          } // heading como gano
+     
+                
+     @media(min-width: 768px){
+              .borde{
+                      height: 150px;
+                      width: 2px;
+                      border-right: 1px solid $rosado;
+                      position: absolute;
+                      right: 0;
+                      top: 0;
+                 
+              }
+            }
+        .box_numero{
+          min-height: 150px;
+          position: relative;
+            img{
+              margin: 0 auto;
+            }
+           
+
+            .num_circle {
+                  border-radius: 50%;
+                  width: 36px;
+                  height: 36px;
+                  padding: 4px;
+                  background: $amarillo;
+                  text-align: center;
+                  @include roboto_bold(20px, black);
+                  font-style: italic;
+                  display: inline-block;
+                  float: left;
+                  margin-right: 20px;
+
+                  @media(max-width: 768px){
+                    float: none;
+                    margin: 0 auto;
+                    display: block;
+
+                      margin-bottom: 20px;
+                  }
+               
+              }
+            p{
+                    @include roboto_bold(16px,white);
+                      line-height: 22px;
+                     @media(max-width: 768px){
+                        font-size: 20px;
+                       text-align: center;
+                  }
+            }
+
+        }
+
+
+    
+            // img{
+            //   @include centerer(true, true);
+            //   left: 54%;
+            //   top:43%;
+            // }
+        //   .text_que_gano{
+        //           @include centerer(true, true);
+        //           text-align: center;
+        //           .nota{
+        //             p{
+        //               @include roboto_bold(16px, white);
+        //               line-height: 16px;
+        //               margin-top: 20px;
+        //               text-transform: uppercase;
+        //             }
+                   
+        //           }
+        //         .texto_blanco_bold{
+        //                 @include black(25px, white);
+        //                  text-transform: uppercase;
+        //                  line-height: 24px;
+        //                 //     @media(max-width: 768px){
+        //                 //     font-size: 14px;
+        //                 // }
+        //           }
+        //       .texto_blanco_black{
+        //             @include black(60px, white);
+        //             text-transform: uppercase;
+        //             line-height: 55px;
+        //             // @media(max-width: 768px){
+        //             //     font-size: 36px;
+        //             // }
+        //       }
+        //       .texto_amarillo_black{
+        //         @include black(50px, $amarillo);
+        //         text-transform: uppercase;
+        //         line-height: 55px;
+        //             @media(max-width: 768px){
+        //             font-size: 38px;
+        //             line-height: 42px;
+        //         }
+
+        //       }
+        //       .text_blanco_med{
+        //             @include book(23px, white );
+        //             text-transform: uppercase;
+        //             line-height: 16px;
+        //             // @media(max-width: 768px){
+        //             //     font-size:28px;
+        //             //     line-height: 30px;
+        //             // }
+        //       }
+        
+       
+      
+        // }
+    
+    } //content como gano
+    .box_pie_como_gano{
+          background-color: $coral;
+          padding: 1px;
+           @media(max-width: 768px){
+                padding: 10px;
+          }
+
+           p{
+                  @include roboto_bold(24px, white);
+                  line-height: 24px;
+                  text-transform: uppercase;
+                  text-align: center;
+                  margin: 20px auto 20px auto;
+                  width: 500px;
+                  @media(max-width: 768px){
+                        max-width: 100%;
+
+                     }
+            }
+     
+    }
+} // end como gano
+
