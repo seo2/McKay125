@@ -90,7 +90,7 @@
                      <div class="form-group border_top">
                       <label for="fecha" class="col-xs-12 col-md-4">fecha de nacimiento</label>
                         <div class="col-md-8">
-                            <input type="date" class="form-control" id="fecha" name="fn" placeholder="" required>
+                            <input type="date" class="form-control" id="fecha" name="fn" placeholder="" required >
                         </div>
                     </div>
                      <div class="form-group">

@@ -234,6 +234,8 @@ $('#form_datos')
 						        	location.reload();
 						    	}else if(msg=='error2'){
 						        	alert("Debes ser mayor de edad para participar");
+						    	}else if(msg=='error3'){
+						        	alert("Fecha de nacimiento invalida");
 						    	}else if(msg=='Ganaste'){
 									$('#modal_instawin').modal('show');
 						    	}else{

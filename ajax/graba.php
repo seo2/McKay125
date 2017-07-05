@@ -33,6 +33,22 @@ function validateAge($birthday, $age = 18)
     return true;
 }
 
+// validate birthday
+function validateAge2($birthday, $age = 100)
+{
+    // $birthday can be UNIX_TIMESTAMP or just a string-date.
+    if(is_string($birthday)) {
+        $birthday = strtotime($birthday);
+    }
+
+    // check
+    // 31536000 is the number of seconds in a 365 days year.
+    if(time() - $birthday > $age * 31536000)  {
+        return false;
+    }
+
+    return true;
+}	
 	
 	$existe = 0;
 	$participante = $db->rawQuery('select * from mckay125_participantes where mk125_rut LIKE "'.$mk125_rut.'"');
@@ -48,100 +64,105 @@ function validateAge($birthday, $age = 18)
 	$hoy	= date('Y-m-d');
 
 	if(validateAge($mk125_fn, $age = 18)){
-		
 	
-		if($existe==0){
-			$data = Array (
-				"mk125_nom" 	=> $mk125_nom,
-				"mk125_rut" 	=> $mk125_rut,
-				"mk125_mail" 	=> $mk125_mail,
-				"mk125_fn" 		=> $mk125_fn,
-				"mk125_fono" 	=> $mk125_fono,
-				"mk125_reg"		=> $mk125_reg,
-				"mk125_cat" 	=> $mk125_cat,
-				"mk125_rts" 	=> $ahora
-			);
-			
-			$mk125_ID = $db->insert ('mckay125_participantes', $data);		
-			$mk125_gan = 0;
-		}
-		$i = 0;
-		$resultado = $db->rawQuery('select * from mckay125_codigos where codUS = "'.$mk125_ID.'" and codCod LIKE "'.$codigo.'" and codHora LIKE "'.$hora.'"');
-		if($resultado){
-			foreach ($resultado as $r) {
-				$i++;
+		
+		if(validateAge2($mk125_fn, $age = 100)){	
+	
+			if($existe==0){
+				$data = Array (
+					"mk125_nom" 	=> $mk125_nom,
+					"mk125_rut" 	=> $mk125_rut,
+					"mk125_mail" 	=> $mk125_mail,
+					"mk125_fn" 		=> $mk125_fn,
+					"mk125_fono" 	=> $mk125_fono,
+					"mk125_reg"		=> $mk125_reg,
+					"mk125_cat" 	=> $mk125_cat,
+					"mk125_rts" 	=> $ahora
+				);
+				
+				$mk125_ID = $db->insert ('mckay125_participantes', $data);		
+				$mk125_gan = 0;
 			}
-		}  
-		
-		if($i<15){
-		
-		
-			$data = Array (
-				"codUS" 	=> $mk125_ID,
-				"codCod" 	=> $codigo,
-				"codHora" 	=> $hora,
-				"codRTS" 	=> $ahora
-			);
+			$i = 0;
+			$resultado = $db->rawQuery('select * from mckay125_codigos where codUS = "'.$mk125_ID.'" and codCod LIKE "'.$codigo.'" and codHora LIKE "'.$hora.'"');
+			if($resultado){
+				foreach ($resultado as $r) {
+					$i++;
+				}
+			}  
 			
-			$id = $db->insert ('mckay125_codigos', $data);
+			if($i<15){
 			
 			
-			if($id){
-							
-				if($mk125_gan==0){ // si aún no ha ganado nada.
-					$quedan = 0;
-					$random = rand(1,20); // saco un número aleatorio
-					
-					if($random==3){ // si el número es 3 puede ganar, y veo si quedan premios para darle
-						$premiospordia = $db->rawQuery('select * from mckay125_premios where mk125p_fec = "'.$hoy.'" ');
-						if($premiospordia){
-							foreach ($premiospordia as $ppd) {
-								$canjeados 	= $ppd['mk125p_can'];
-								$fecha 		= $ppd['mk125p_fec'];
+				$data = Array (
+					"codUS" 	=> $mk125_ID,
+					"codCod" 	=> $codigo,
+					"codHora" 	=> $hora,
+					"codRTS" 	=> $ahora
+				);
+				
+				$id = $db->insert ('mckay125_codigos', $data);
+				
+				
+				if($id){
 								
-								if($ppd['mk125p_tot'] > $ppd['mk125p_can']){							
-									$quedan = 1;
-								}
-								
-							}
-						}  
+					if($mk125_gan==0){ // si aún no ha ganado nada.
+						$quedan = 0;
+						$random = rand(1,20); // saco un número aleatorio
 						
-						if($quedan==1){ // quedan premios
-							$canjeados = $canjeados + 1;
-							$data1 = Array (
-								"mk125p_can" 	=> $canjeados
-							);
-							$db->where ('mk125p_fec', $fecha);
-							$id1 = $db->update('mckay125_premios', $data1);	
+						if($random==3){ // si el número es 3 puede ganar, y veo si quedan premios para darle
+							$premiospordia = $db->rawQuery('select * from mckay125_premios where mk125p_fec = "'.$hoy.'" ');
+							if($premiospordia){
+								foreach ($premiospordia as $ppd) {
+									$canjeados 	= $ppd['mk125p_can'];
+									$fecha 		= $ppd['mk125p_fec'];
+									
+									if($ppd['mk125p_tot'] > $ppd['mk125p_can']){							
+										$quedan = 1;
+									}
+									
+								}
+							}  
 							
-							$data2 = Array (
-								"mk125_gan" 	=> 1
-							);
-							$db->where ('mk125_ID', $mk125_ID);
-							$id2 = $db->update('mckay125_participantes', $data2);
-							
-							$data3 = Array (
-								"codGan" 	=> 1
-							);	
-							$db->where ('codID', $id);
-							$id4 = $db->update('mckay125_codigos', $data3);
-							
-							echo 'Ganaste';					
+							if($quedan==1){ // quedan premios
+								$canjeados = $canjeados + 1;
+								$data1 = Array (
+									"mk125p_can" 	=> $canjeados
+								);
+								$db->where ('mk125p_fec', $fecha);
+								$id1 = $db->update('mckay125_premios', $data1);	
+								
+								$data2 = Array (
+									"mk125_gan" 	=> 1
+								);
+								$db->where ('mk125_ID', $mk125_ID);
+								$id2 = $db->update('mckay125_participantes', $data2);
+								
+								$data3 = Array (
+									"codGan" 	=> 1
+								);	
+								$db->where ('codID', $id);
+								$id4 = $db->update('mckay125_codigos', $data3);
+								
+								echo 'Ganaste';					
+							}else{
+								echo 'No Quedan Premios';
+							}
 						}else{
-							echo 'No Quedan Premios';
+							echo 'Sigue participando. (1)';
 						}
 					}else{
-						echo 'Sigue participando. (1)';
+						echo 'Sigue participando. (2)';
 					}
+					
 				}else{
-					echo 'Sigue participando. (2)';
+					echo 'error';
 				}
-				
 			}else{
-				echo 'error';
+				echo 'error1';
 			}
 		}else{
-			echo 'error1';
+			echo 'error3';
 		}
 	}else{
 		echo 'error2';

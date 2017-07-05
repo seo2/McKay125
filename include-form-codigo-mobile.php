@@ -9,7 +9,7 @@
                     </div>
                     <div class="col-xs-4 col-sm-6 text-center">
                        <div class="form-group">
-                         <input type="text" class="form-control" id="hora" placeholder="17:55" name="hora" required>
+                         <input type="time" class="form-control" id="hora" placeholder="17:55" name="hora" required>
                       </div>
                     </div>
                   </div>

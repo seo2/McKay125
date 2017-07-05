@@ -24,6 +24,6 @@
     <script src="assets/js/formValidation.min.js"></script>
     <script src="assets/js/language/es_ES.js"></script>
 	<script src="assets/js/framework/bootstrap.min.js"></script>
-    <script src="assets/js/mckay.js?v=2"></script>
+    <script src="assets/js/mckay.js?v=2.1"></script>
   </body>
 </html>

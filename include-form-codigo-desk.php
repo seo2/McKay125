@@ -8,7 +8,7 @@
                          <input type="text" class="form-control" id="codigo" placeholder="AAAAAAA" name="codigo" required>
                        </div>
                         <div class="form-group col-sm-6">
-                         <input type="text" class="form-control" id="hora" placeholder="17:55" name="hora" required>
+                         <input type="time" class="form-control" id="hora" placeholder="17:55" name="hora" required>
                        </div>
                     </div>
                 </div>
