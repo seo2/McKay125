@@ -2,6 +2,7 @@
 
 html { position: relative; min-height: 100%; font-size: 100%; }
 
+
 button, input, select[multiple], textarea { background: transparent; border: 0; }
 
 a, a:hover, a:focus, button { text-decoration: none; outline: none; }
@@ -468,6 +469,25 @@ section.faq .content_faq .answer_faq ul { list-style: disc; padding: 0 0 0 20px;
 	}
 }
 
+/* nuevos estilos seo2 v2*/
+
+body{border-top: 5px solid #fbe33b;}
+body#home{background: #ea191c;}
+header{border-bottom: 1px solid #ff5759;}
+.navbar-default{border-bottom: 1px solid #cc0003;background: #ea191c;}
+#contador{background: #b80211; padding: 20px 0; margin-bottom: 20px;}
+#contador h5{font-family: 'nexa_black'; text-transform: uppercase; color: #fff; font-size: 30px; margin-bottom: 10px; margin-top: -5px; }
+#clocktop .tiempo{float: left; background: #fff; color: #ea191c; font-family: 'nexa_book'; font-size: 41px; font-weight: bold; text-align: center; border-radius: 5px; padding: 15px 0;}
+#clocktop .dospuntos{float: left;color: #fbe33b; font-family: 'nexa_black'; font-size: 41px;text-align: center;     padding: 15px 0;}
+#clockbot .tiempo{float: left; color: #fbe33b; font-family: 'nexa_book'; font-size: 18px;  text-align: center; padding: 5px 0;}
+#clockbot .dospuntos{float: left;padding: 5px 0;}
+
+#franja_participa{background: #fbe33b; height: 120px; margin: 60px 0;}
+#txt_participa{position: absolute;top: 50% ; -webkit-transform: translate(0%, -50%); transform: translate(0%, -50%); padding: 0 15px 0 0;}
+
+.box_codigo{background: none;}
+
+
 /* GANADORES */
 
 .ganadores{text-transform: uppercase;}
@@ -524,3 +544,5 @@ section.faq .content_faq .answer_faq ul { list-style: disc; padding: 0 0 0 20px;
 @supports (-ms-ime-align:auto) {
   .form-control{padding-left: 0; }
 }
+
+

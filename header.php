@@ -100,8 +100,10 @@ fbq('track', 'PageView');
                 <li><a href="index.php">Home</a><span class="separador"></span></li>
                 <li><a href="que-gano.php">qué gano</a><span class="separador"></span></li>
                 <li><a href="como-gano.php">cómo participo</a><span class="separador"></span></li>
+<!--
                 <li><a href="productos.php">productos</a><span class="separador"></span></li>
                 <li><a href="ganadores.php">ganadores</a><span class="separador"></span></li>
+-->
                 <li><a href="assets/descargas/Bases_McKay_125.pdf">bases legales</a><span class="separador"></span></li>
                 <li><a href="contacto.php">contacto</a></li>
             </ul>

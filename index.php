@@ -1,13 +1,61 @@
 <?php include('header.php') ?>
 
-<body class="body-offcanvas">
+<body class="body-offcanvas" id="home">
 
-  <div class="container">
+  <div class="container" >
     <div class="row">
 	    <div class="col-sm-12">
-	      <img src="assets/img/title.png" alt="" class="img-responsive center-block">
+	      <img src="assets/img/nuevo_llamado_desk.png" alt="" class="img-responsive center-block">
 	    </div>
     </div>
+  </div>
+  <div id="contador">
+	  <div class="container">
+	  	<div class="row">
+	  		<div class="col-md-4 col-md-offset-1">
+		  		<div class="col-xs-11">
+		  			<h5 class="text-center">Faltan</h5>
+		  		</div>
+	  			<div id="clock"></div>
+<!--
+				<div id="clock">
+					<div id="clocktop">
+						<div class="tiempo col-xs-3">08</div>
+						<div class="dospuntos col-xs-1">:</div>
+						<div class="tiempo col-xs-3">17</div>
+						<div class="dospuntos col-xs-1">:</div>
+						<div class="tiempo col-xs-3">39</div>
+					</div>
+					<div id="clockbot">
+						<div class="tiempo col-xs-3">HH</div>
+						<div class="dospuntos col-xs-1"></div>
+						<div class="tiempo col-xs-3">MIN</div>
+						<div class="dospuntos col-xs-1"></div>
+						<div class="tiempo col-xs-3">SEG</div>
+					</div>
+				</div>
+-->
+	  		</div>
+	  		<div class="col-md-7">
+	  			<img src="assets/img/nuevo_llamado_desk_2.png">
+	  		</div>
+	  	</div>
+	  </div>
+  </div>
+  
+  <div id="franja_participa">
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-md-10 col-md-offset-1" style="height:120px;">
+	  			<div id="txt_participa">
+	  				<img src="assets/img/txt_participa.png" class="img-responsive" >
+	  			</div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+  
+  <div class="container" >
     <div class="row">
      <div class="col-sm-12" id="formcod">
         <?php 
@@ -219,3 +267,20 @@ por uno de los sueños diarios que mckay tiene para ti
   
 <?php include('footer.php') ?>
 
+<?php
+	$datetime = new DateTime('tomorrow');
+
+?>
+<script>
+
+	var elfin = moment.tz("<?php echo $datetime->format('Y-m-d H:i:s');
+; ?>", "America/Santiago");
+
+	$('#clock').countdown(elfin.toDate(), function(event) {
+		$(this).html(event.strftime('<div id="clocktop"><div class="tiempo col-xs-3">%H</div><div class="dospuntos col-xs-1">:</div><div class="tiempo col-xs-3">%M</div><div class="dospuntos col-xs-1">:</div><div class="tiempo col-xs-3">%S</div></div><div id="clockbot"><div class="tiempo col-xs-3">HH</div><div class="dospuntos col-xs-1"></div><div class="tiempo col-xs-3">MIN</div><div class="dospuntos col-xs-1"></div><div class="tiempo col-xs-3">SEG</div></div>'));
+	});
+</script>
+
+<?
+	//} 
+?>
