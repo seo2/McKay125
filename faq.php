@@ -5,7 +5,7 @@
     <div class="row">
         <section class="faq">
 			<div class="heading_faq">
-					<div class="col-xs-6 col-xs-offset-3">
+					<div class="col-xs-6 col-xs-offset-3 visible-xs">
 						<img class="img-responsive" src="assets/img/logo125.png" alt="">
 					</div>
 				<div class="col-sm-10 col-sm-offset-1">

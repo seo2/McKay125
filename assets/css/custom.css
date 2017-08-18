@@ -471,10 +471,43 @@ section.faq .content_faq .answer_faq ul { list-style: disc; padding: 0 0 0 20px;
 
 /* nuevos estilos seo2 v2*/
 
-body{border-top: 5px solid #fbe33b;}
+body{border-top: 5px solid #fbe33b;padding-top: 80px;}
 body#home{background: #ea191c;}
-header{border-bottom: 1px solid #ff5759;}
+#header1{border-top: 5px solid #fbe33b; border-bottom: 1px solid #ff5759; top: 0;
+    position: fixed;
+    width: 100%;
+    background: #ea191c;
+    z-index: 10;}
 .navbar-default{border-bottom: 1px solid #cc0003;background: #ea191c;}
+.navbar-nav{float: right;}
+#navbar ul#main_nav li a{color: #fff; transition: all .1s ease-in-out; }
+#navbar ul#main_nav li a.btnnuevomenu{color: #fbe33b; font-size: 30px; margin-top: -5px; transition: all .2s ease-in-out;}
+#navbar ul#main_nav li a.btnnuevomenu:hover{text-shadow: 0 0 3px rgba(255,255,255,0.7);}
+
+#header1 #navbar ul#main_nav li a:hover{color: #fbe33b;}
+
+#header2{position: fixed; width: 100%; top: 5px; background: #fdd23d; z-index: 1000; height: 160px; -webkit-box-shadow: 0px 7px 20px -2px rgba(50, 50, 50, 0.58);
+-moz-box-shadow:    0px 7px 20px -2px rgba(50, 50, 50, 0.58);
+box-shadow:         0px 7px 20px -2px rgba(50, 50, 50, 0.58);}
+#header2 .navbar-default{border-bottom: none; background: #fdd23d;}
+#header2 .navbar-nav{float: right;}
+#header2 #navbar ul#main_nav li a{color: #bc0002; transition: all .1s ease-in-out;}
+#header2 #navbar ul#main_nav li a.btnnuevomenu{color: #bc0002; font-size: 30px; margin-top: -5px; }
+
+#header2 #navbar ul#main_nav li a:hover{color: #fff;  }
+
+
+#header2 .lafacebook{position: absolute; left: -70px;}
+#header2 #navbar ul#main_nav li a.btn-fb{    width: 40px;
+	    height: 40px;
+	    border: 3px solid;
+	    border-radius: 50%;
+	    line-height: 0px;
+    }
+
+.primernav{margin-right: 12px;}
+.segundonav{ margin-right: 61px; border-top: 1px solid #bc0002; padding-top: 12px; margin-top: 6px; width: 527px; position: relative;}
+
 #contador{background: #b80211; padding: 20px 0; margin-bottom: 20px;}
 #contador h5{font-family: 'nexa_black'; text-transform: uppercase; color: #fff; font-size: 30px; margin-bottom: 10px; margin-top: -5px; }
 #clocktop .tiempo{float: left; background: #fff; color: #ea191c; font-family: 'nexa_book'; font-size: 41px; font-weight: bold; text-align: center; border-radius: 5px; padding: 15px 0;}
@@ -482,10 +515,122 @@ header{border-bottom: 1px solid #ff5759;}
 #clockbot .tiempo{float: left; color: #fbe33b; font-family: 'nexa_book'; font-size: 18px;  text-align: center; padding: 5px 0;}
 #clockbot .dospuntos{float: left;padding: 5px 0;}
 
-#franja_participa{background: #fbe33b; height: 120px; margin: 60px 0;}
+#franja_participa{background: #fbe33b; height: 110px; margin: 70px 0 60px;}
 #txt_participa{position: absolute;top: 50% ; -webkit-transform: translate(0%, -50%); transform: translate(0%, -50%); padding: 0 15px 0 0;}
 
-.box_codigo{background: none;}
+.box_codigo{background: none; max-width: initial; margin-bottom: 30px; padding: 20px 15px 0; height: 100px;background: url(../img/borde-inf.png) repeat-x left bottom;}
+.box_codigo form#form_codigo .btn_amarillo{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fbe33b+41,deb512+100 */
+	background: #fbe33b; /* Old browsers */
+	background: -moz-linear-gradient(top, #fbe33b 41%, #deb512 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #fbe33b 41%,#deb512 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #fbe33b 41%,#deb512 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbe33b', endColorstr='#deb512',GradientType=0 ); /* IE6-9 */
+	color: #ea191c;
+	border: none; font-family: 'nexa_black', Helvetica, Arial, sans-serif; font-size: 30px;  text-transform: uppercase; width: 100%; height: 80px; margin-top: -50px; transition: all .5s ease-in-out;
+}
+.box_codigo form#form_codigo .btn_amarillo:hover{font-size: 32px;}
+
+.box_codigo form#form_codigo .input_codigo {
+    margin-top: 0;
+    background-color: #ebebeb;
+    padding: 0;
+    border-radius: 4px;
+    margin-bottom: 10px; height: 80px; margin-top: -50px;
+}
+
+.box_codigo .input_codigo .form-group{padding: 0 15px;}
+.box_codigo form#form_codigo .input_codigo .form-group .form-control {
+    text-align: center;
+}
+
+
+.box_codigo .has-feedback .form-control{padding-right: 12px; height: 50px;}
+#codigos{    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;}
+
+.box_codigo .checkbox{color: #fff;}
+.box_ganador {
+    margin-top: 50px;
+}
+section.ingreso_datos{background: #b80211;}
+section.ingreso_datos #form_datos .box_edad,
+.separador{background: url(../img/separador.png) repeat-x left bottom transparent; margin-bottom: 15px;}
+section.ingreso_datos .btn_amarillo{color: #ea191c;padding: 6px 50px;}
+footer .logo_footer {
+    position: absolute;
+    left: 0;
+    background: url(../img/logo_footer.png) no-repeat;
+    width: 146px;
+    height: 92px;
+    background-size: cover;
+    background-position: center;
+}
+footer {
+    position: relative;
+    min-height: 120px;
+}
+
+.laflechita a{ display: block; padding: 5px; transition: all 0.2s ease-in-out; width: 100px; margin: -10px auto 0;}
+.laflechita a:hover{padding: 0 5px 10px; cursor: pointer;}
+
+@media (max-width: 768px) {
+	body { border-top: none; padding-top: 0; }
+	#header1 {
+	    border-top: none;
+	    border-bottom: none;
+	    top: 0;
+	    position: fixed;
+	    width: 100%;
+	    background: transparent;
+	    z-index: 10;
+	}	
+	.navbar-toggle {
+	    padding: 15px 15px;
+	    margin-top: 0;
+	    margin-right: 0;
+	    background-color: #fdd23d;
+	    border-radius: 0;
+	}
+	.offcanvas-toggle .icon-bar { background: #b60001;}
+	.navbar-default {
+	    border-bottom: 1px solid #cc0003;
+	    background: #fdd23d;
+	}
+	#navbar ul#main_nav li a { color: #b60001; }
+	#navbar ul#main_nav li a.btn-fb{    width: 40px;
+	    margin: 50px auto;
+	    height: 40px;
+	    border: 3px solid;
+	    border-radius: 50%;
+	    line-height: 0px;
+    }
+	#contador{background: transparent; padding: 20px 0; margin-bottom: 20px; margin-top: 20px;}
+	#contador h5{font-size: 20px;}
+	.espiga{margin-top: 25px; padding: 0 5px;}
+	#clocktop .tiempo,
+	#clocktop .dospuntos{ padding: 5px 0;}
+	#clocktop .tiempo{font-size: 30px;}
+	#clocktop .dospuntos{font-size: 30px;}
+	
+	#flechabaja{margin-top: 20px;}
+	
+	
+	.box_codigo_xs form#form_codigo_xs .checkbox { text-align: left; margin: 0 15px 10px; }
+	.box_codigo_xs form#form_codigo_xs .checkbox label { color: #727272;}
+	footer .logo_footer {
+	    left: 30px;
+	    top: 50px;
+	    width: 96px;
+	    height: 62px;
+	}
+	.box_codigo_xs form#form_codigo_xs .input_codigo .form-group .form-control{padding-right: 12px;}
+}
+
 
 
 /* GANADORES */

@@ -253,7 +253,7 @@ $('#form_datos')
 						$('#hora2').val("");
 						$('.box_ganador').removeClass('hide');
 						$('#ingreso_datos').addClass('hide');
-						$('html, body').animate({  scrollTop: $(".body-offcanvas").offset().top }, 1000);
+						$('html, body').animate({  scrollTop: $("#franja_participa").offset().top }, 1000);
 						$('#form_codigo').data('formValidation').resetForm();
 						$('#form_datos').data('formValidation').resetForm();
 						$('#form_codigo')[0].reset();
@@ -299,7 +299,7 @@ $('#modal_mensaje').on('hidden.bs.modal', function () {
 	
 	$('.box_ganador').removeClass('hide');
 	$('#ingreso_datos').addClass('hide');
-	$('html, body').animate({  scrollTop: $(".body-offcanvas").offset().top }, 1000);
+	$('html, body').animate({  scrollTop: $("#franja_participa").offset().top }, 1000);
 	$('#form_codigo').data('formValidation').resetForm();
 	$('#form_datos').data('formValidation').resetForm();
 	$('#form_codigo')[0].reset();
@@ -381,3 +381,22 @@ $('#main_contact')
 		});
 		 
     });
+    
+$('#header1 .btnnuevomenu').on('click', function(){
+	$('#header2').removeClass('hide');
+});
+
+$('#header2 .btnnuevomenu').on('click', function(){
+	$('#header2').addClass('hide');
+});
+
+
+
+$('#flechabaja').on('click', function(){
+	$('html, body').animate({  scrollTop: $("#franja_mobile").offset().top }, 1000);
+});
+
+
+$('#flechabaja2').on('click', function(){
+	$('html, body').animate({  scrollTop: $("#franja_participa").offset().top }, 1000);
+});
