@@ -629,6 +629,7 @@ footer {
 	    height: 62px;
 	}
 	.box_codigo_xs form#form_codigo_xs .input_codigo .form-group .form-control{padding-right: 12px;}
+	.box_ganador .text h4{font-size: 30px;}
 }
 
 
