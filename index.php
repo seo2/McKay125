@@ -212,26 +212,54 @@
 
     <!---row nueva -->
     <div class="row">
-     <?php
+
+     	<?php
 		    $invisible = 0;
-		  	$resultado = $db->rawQuery('select * from mckay125_ganadores order by ganiD DESC limit 1');
+		  	$resultado = $db->rawQuery('SELECT * FROM `mckay125_participantes` LIMIT 2');
 			if($resultado){
 				foreach ($resultado as $r) {
-					$mk125_ID   = $r["ganID"];
-					$mk125_Nom  = $r["ganNom"];
-					$mk125_Rut  = $r["ganRut"];
-					$mk125_Fec  = $r["ganFec"];
+					$mk125_Nom   = $r["mk125_nom"];
+					
+					///$invisible  = 1;
+				}
+			}     
+			
+	     ?>
+
+
+
+	    <?php
+		    $invisible = 0;
+		  	$resultado = $db->rawQuery('SELECT * FROM `mckay125_codigos` LIMIT 2');
+			if($resultado){
+				foreach ($resultado as $r) {
+
+					$mk125_US   = $r["codUS"];
+					
 					$invisible  = 1;
 				}
 			}     
-			$newDate = date("d-m-Y", strtotime($mk125_Fec));
-	    ?>
+			
+	    ?> 
+
+  			
+
+ 
+
+
 
 	      <div class="box_ganador center-block <?php if($invisible == 0){ ?>invisible<?php } ?>">
             <div class="text">
-              <h3>GANADOR <?php echo $newDate; ?></h3>
-              <h4><?php echo $mk125_Nom; ?></h4>
+              <h3>Participantes</h3>
+              <br>
+             <td><?php echo $mk125_Nom; ?></td>
+             <h3><?php echo $mk125_US; ?></h3>
+             
             </div>
+
+
+ 
+
             <span class="small" style="
     color: #fff;
     bottom: 10px;
@@ -240,7 +268,7 @@
     text-align: center;
     width: 100%;
     left: 0;
-">*Ganador sujeto a validación</span>
+"></span>
         </div>
     	
     </div>
