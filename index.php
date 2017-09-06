@@ -215,45 +215,29 @@
 
      	<?php
 		    $invisible = 0;
-		  	$resultado = $db->rawQuery('SELECT * FROM `mckay125_participantes` LIMIT 2');
-			if($resultado){
+		  	$resultado = $db->rawQuery('SELECT  a.mk125_nom,b.codUS 
+		  		FROM mckay125_participantes a ,mckay125_codigos b
+		  		WHERE a.mk125_ID=b.codID  limit 1');
+		  	if($resultado){
 				foreach ($resultado as $r) {
-					$mk125_Nom   = $r["mk125_nom"];
-					
-					///$invisible  = 1;
-				}
-			}     
-			
-	     ?>
-
-
-
-	    <?php
-		    $invisible = 0;
-		  	$resultado = $db->rawQuery('SELECT * FROM `mckay125_codigos` LIMIT 2');
-			if($resultado){
-				foreach ($resultado as $r) {
-
-					$mk125_US   = $r["codUS"];
-					
+					$mk125_Nombre   = $r["mk125_nom"];
+					$mk125_Codigo  = $r["codUS"];
+				
 					$invisible  = 1;
 				}
-			}     
-			
-	    ?> 
-
-  			
-
- 
+			} 
 
 
-
+			?>
+	  
 	      <div class="box_ganador center-block <?php if($invisible == 0){ ?>invisible<?php } ?>">
             <div class="text">
               <h3>Participantes</h3>
               <br>
-             <td><?php echo $mk125_Nom; ?></td>
-             <h3><?php echo $mk125_US; ?></h3>
+             <h3><?php echo $mk125_Nombre; ?></h3>
+             <h3><?php echo $mk125_Codigo; ?></h3>
+
+
              
             </div>
 
