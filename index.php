@@ -213,30 +213,69 @@
     <!---row nueva -->
     <div class="row">
 
-     	<?php
-		    $invisible = 0;
-		  	$resultado = $db->rawQuery('SELECT  a.mk125_nom,b.codUS 
-		  		FROM mckay125_participantes a ,mckay125_codigos b
-		  		WHERE a.mk125_ID=b.codID  limit 1');
-		  	if($resultado){
-				foreach ($resultado as $r) {
-					$mk125_Nombre   = $r["mk125_nom"];
-					$mk125_Codigo  = $r["codUS"];
-				
-					$invisible  = 1;
-				}
-			} 
-
-
-			?>
+		     		
 	  
 	      <div class="box_ganador center-block <?php if($invisible == 0){ ?>invisible<?php } ?>">
             <div class="text">
               <h3>Participantes</h3>
               <br>
-             <h3><?php echo $mk125_Nombre; ?></h3>
-             <h3><?php echo $mk125_Codigo; ?></h3>
 
+              <?php
+$resultado = $db->rawQuery('SELECT COUNT( * ) AS total, codUS FROM mckay125_codigos GROUP BY codUS ORDER BY total DESC LIMIT 4');
+if($resultado){
+foreach ($resultado as $r) {
+$total   = $r["total"];
+$codUS  = $r["codUS"];
+$participante = $db->rawQuery("SELECT * FROM mckay125_participantes WHERE mk125_ID = $codUS");
+if($participante){
+foreach ($participante as $p) {
+$mk125_nom  = $p["mk125_nom"];
+}
+} 
+?>
+<h3><?php echo $total; ?><?php echo $mk125_Codigo; ?>-<?php echo $mk125_nom; ?></h3>
+
+
+
+
+<?php }
+} 
+
+
+?>
+            <!--  <?php
+		    $invisible = 0;
+		  	$resultado = $db->rawQuery('SELECT  a.mk125_nom,b.codUS 
+		  		FROM mckay125_participantes a ,mckay125_codigos b
+		  		WHERE a.mk125_ID=b.codID  limit 3');
+		  	if($resultado){
+				foreach ($resultado as $r) {
+					$mk125_Nombre   = $r["mk125_nom"];
+					$mk125_Codigo  = $r["codUS"];
+					
+					$invisible  = 1; ?>
+					<div class="table-responsive">
+					  <table class="table">
+					   <tr>
+			   				 <td><h3><?php echo $mk125_Nombre; ?></h3>
+			   	           		  
+			   	             <td>
+					   </tr>
+					   <tr>
+					   	<td>
+					   		<h3><?php echo $mk125_Codigo; ?></h3>
+					   	</td>
+					   </tr>
+					  </table>
+					</div>
+			
+
+				<?php }
+			} 
+
+
+			?> -->
+           
 
              
             </div>
