@@ -53,7 +53,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 
 @media (max-width: 767px) { .navbar-default { background: none; background-color: #8b0000; border: none; height: 400px; } }
 
-#navbar { position: relative; margin-top: 20px; } 
+#navbar { position: relative; margin-top: 20px; }
 
 #galletas{float: left; color: #fff;font-family: 'nexa_black', Helvetica, Arial, sans-serif; height: 40px; line-height: 40px; margin-right: 10px;}
 #navbar .rrss { float: left}
@@ -65,8 +65,8 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 
 @media (max-width: 767px) { #navbar .rrss { font-size: 16px; position: absolute; left: 50%; -webkit-transform: translate(-50%, 0); transform: translate(-50%, 0); bottom: -40px; } }
 
-@media (max-width: 768px) { 
-	#navbar .rrss .fa-lg { font-size: 16px; } 
+@media (max-width: 768px) {
+	#navbar .rrss .fa-lg { font-size: 16px; }
 	#galletas { float: none; text-align: center; }
 }
 
@@ -353,9 +353,9 @@ section.productos .content_productos .heading_productos h4 span{color: #fbe33b;}
 section.productos .content_productos .heading_productos h4 span.registrado{color: #fff; font-size: 12px;}
 
 
-@media (max-width: 768px) { 
-	section.productos .content_productos .heading_productos h3 { font-size: 26px; line-height: 25px; } 
-	section.productos .content_productos .heading_productos h4 { font-size: 22px; line-height: 25px; } 
+@media (max-width: 768px) {
+	section.productos .content_productos .heading_productos h3 { font-size: 26px; line-height: 25px; }
+	section.productos .content_productos .heading_productos h4 { font-size: 22px; line-height: 25px; }
 }
 
 section.productos .content_productos .slider_productos { margin: 30px 0; }
@@ -444,7 +444,7 @@ section.faq .content_faq ul.preguntas li:hover,
 section.faq .content_faq ul.preguntas li.active {color: #fbe33b; cursor: pointer; }
 section.faq .content_faq img{margin-top: -60px;}
 
-.answer_faq{text-transform: uppercase; font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;}    
+.answer_faq{text-transform: uppercase; font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;}
 .answer_faq h4{color: #fbe33b; font-weight: 700; font-size: 30px; margin: 30px 0 20px;}
 .answer_faq .box_faq{background: rgba(166,0,2,0.8); padding: 40px 20px; }
 .answer_faq .box_faq p{ color: #fff; font-size: 16px;}
@@ -561,6 +561,54 @@ section.ingreso_datos{background: #b80211;}
 section.ingreso_datos #form_datos .box_edad,
 .separador{background: url(../img/separador.png) repeat-x left bottom transparent; margin-bottom: 15px;}
 section.ingreso_datos .btn_amarillo{color: #ea191c;padding: 6px 50px;}
+
+/*====== AGREGADOS POR CHRISTIANSEN*/
+
+.box_ganador{
+  border-top: 1px solid #fbe33b !important;
+  border-bottom: 1px solid #fbe33b !important;
+  border-radius: 0 !important;
+  background-color: #8b0406;
+  max-width: 80%;
+  padding: 30px ;
+
+}
+img#tit-sonadores.img-responsive.center-block {
+    display: block !important;
+    margin-top: 60px !important;
+    margin-bottom: 50px !important;
+}
+
+.texto-amarillo{
+  color: #fbe33b;
+}
+#tabla-ranking{
+  width: 90%;
+   font-size: 30px;
+}
+/*titulo columnas*/
+thead tr th{
+  text-transform: uppercase;
+  color: #fbe33b;
+
+  font-weight: 400;
+  font-family: 'Lato', sans-serif;
+  line-height: 25px !important;
+ /* border-bottom: none !important;*/
+}
+
+/*nombres ranking*/
+tbody tr td {
+
+  color: white;
+
+  font-family: 'Lato', sans-serif;
+   font-weight: 400;
+   text-transform: uppercase;
+   text-align: left;
+   border-top: none !important;
+}
+
 footer .logo_footer {
     position: absolute;
     left: 0;
@@ -588,7 +636,7 @@ footer {
 	    width: 100%;
 	    background: transparent;
 	    z-index: 10;
-	}	
+	}
 	.navbar-toggle {
 	    padding: 15px 15px;
 	    margin-top: 0;
@@ -616,10 +664,10 @@ footer {
 	#clocktop .dospuntos{ padding: 5px 0;}
 	#clocktop .tiempo{font-size: 30px;}
 	#clocktop .dospuntos{font-size: 30px;}
-	
+
 	#flechabaja{margin-top: 20px;}
-	
-	
+
+
 	.box_codigo_xs form#form_codigo_xs .checkbox { text-align: left; margin: 0 15px 10px; }
 	.box_codigo_xs form#form_codigo_xs .checkbox label { color: #727272;}
 	footer .logo_footer {

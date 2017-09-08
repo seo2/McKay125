@@ -42,11 +42,11 @@
 	  	</div>
 	  </div>
   </div>
-  
+
  	   		<div class="col-xs-12 text-center laflechita hidden-xs">
 	  			<a href="javascript:void(0);"><img src="assets/img/mobile_flecha.png" class="" id="flechabaja2"></a>
 	  		</div>
-  
+
   <div id="franja_participa" class="hidden-xs">
   	<div class="container">
   		<div class="row">
@@ -66,18 +66,18 @@
   <div class="container" >
     <div class="row">
      <div class="col-md-10 col-md-offset-1" id="formcod">
-        <?php 
+        <?php
 	    if( $detect->isMobile() && !$detect->isTablet() ){
-			include('include-form-codigo-mobile.php'); 
+			include('include-form-codigo-mobile.php');
 		}else{
-	        include('include-form-codigo-desk.php'); 
+	        include('include-form-codigo-desk.php');
 		}
-		?>  
+		?>
       </div>  <!-- col-sm-12 -->
     </div> <!-- row -->
     <div class="row" >
     	<div class="col-sm-6 col-sm-offset-3">
-    		<img src="assets/img/txt_participa_grande.png" class="img-responsive">
+    		<img src="assets/img/txt_participa_grande.png" class="img-responsive txt_participa">
     	</div>
     </div>
     <div class="row">
@@ -92,38 +92,38 @@
 					$mk125_Fec  = $r["ganFec"];
 					$invisible  = 1;
 				}
-			}     
+			}
 			$newDate = date("d-m-Y", strtotime($mk125_Fec));
 	    ?>
-        <div class="box_ganador center-block <?php if($invisible == 0){ ?>invisible<?php } ?>">
+        <!-- <div class="box_ganador center-block <?php if($invisible == 0){ ?>invisible<?php } ?>">
             <div class="text">
               <h3>GANADOR <?php echo $newDate; ?></h3>
               <h4><?php echo $mk125_Nom; ?></h4>
             </div>
             <span class="small" style="
-    color: #fff;
-    bottom: 10px;
-    position: absolute;
-    display: block;
-    text-align: center;
-    width: 100%;
-    left: 0;
-">*Ganador sujeto a validación</span>
-        </div>
+              color: #fff;
+              bottom: 10px;
+              position: absolute;
+              display: block;
+              text-align: center;
+              width: 100%;
+              left: 0;
+          ">*Ganador sujeto a validación</span>
+        </div> -->
         <div class="col-md-10 col-md-offset-1">
 	        <section class="ingreso_datos hide" id="ingreso_datos">
 	              <h3>ingresa tus datos</h3>
 	            <form id="form_datos" class="form-horizontal">
-	              <div class="box_edad separador"> 
+	              <div class="box_edad separador">
 	              	<p>¿eres mayor de edad?</p>
-	              
+
 	                <label class="radio-inline">
 	                	<input type="radio" name="mayor" id="inlineRadio1" value="1"> sí
 	                </label>
 	                <label class="radio-inline">
 	                	<input type="radio" name="mayor" id="inlineRadio2" value=""> no
-	                </label> 
-	                
+	                </label>
+
 	              </div> <!-- box edad -->
 	              <div class="separador">
 		              <div class="col-sm-12 col-md-6">
@@ -147,7 +147,7 @@
 		              </div>
 		              <div class="clearfix"></div>
 	              </div>
-	              
+
 	              <div class="separador">
 		              <div class="col-sm-12 col-md-6">
 		                     <div class="form-group">
@@ -166,7 +166,7 @@
 		                    </div>
 		              </div>
 	              <div class="clearfix"></div></div>
-	              
+
 	              <div class="separador">
 		              <div class="col-sm-12 col-md-6">
 		                     <div class="form-group">
@@ -177,13 +177,13 @@
 		                    </div>
 		              </div>
 		              <div class="col-sm-12 col-md-6">
-	
-		
+
+
 		                     <div class="form-group border_bottom">
 		                      <label for="ciudad" class="col-xs-12 col-md-4">Región</label>
 		                        <div class="col-md-8">
 			                        <select class="form-control" name="region" id="region" required>
-				                        
+
 									  <option value="">Seleccione Región</option>
 								  <?php
 								  	$resultado = $db->rawQuery('select * from region');
@@ -192,73 +192,89 @@
 											$region_id   = $r["region_id"];
 											$region_nombre  = $r["region_nombre"];
 									?>
-									  <option value="<?php echo $region_id; ?>"><?php echo $region_nombre; ?></option>  
-										<?php  
+									  <option value="<?php echo $region_id; ?>"><?php echo $region_nombre; ?></option>
+										<?php
 												}
-											}                           
+											}
 										?>
 									</select>
 		                        </div>
 		                    </div>
 		              </div>
-	
+
 	              <div class="clearfix"></div></div>
 	              <div class="clearfix"></div>
 	            <button type="submit" class="btn btn-default btn_amarillo center-block" id="btnEnviar">enviar</button>
 	 		</form>
 	        </section>
         </div>
+
+
+
+
     </div><!-- row -->
+
+
 
     <!---row nueva -->
     <div class="row">
+    <img id="tit-sonadores" class="img-responsive center-block" src="assets/img/tit-ranking.png" alt="ranking de soñadores" title="ranking de soñadores">
 
-		     		
-	  
+
+
 	      <div class="box_ganador center-block <?php if($invisible == 0){ ?>invisible<?php } ?>">
-            <div class="text">
-              <h3>Participantes</h3>
-              <br>
 
+                    <!-- tabla participantes -->
+                    <div class="table-responsive">
+                               <table id="tabla-ranking" class="table center-block">
+                                 <thead>
+                                   <tr>
+                                     <th>Códigos Ingresados</th>
+                                     <th>Participantes</th>
+                                   </tr>
+                                 </thead>
+                                 <tbody>
               <?php
-$resultado = $db->rawQuery('SELECT COUNT( * ) AS total, codUS FROM mckay125_codigos GROUP BY codUS ORDER BY total DESC LIMIT 4');
-if($resultado){
-foreach ($resultado as $r) {
-$total   = $r["total"];
-$codUS  = $r["codUS"];
-$participante = $db->rawQuery("SELECT * FROM mckay125_participantes WHERE mk125_ID = $codUS");
-if($participante){
-foreach ($participante as $p) {
-$mk125_nom  = $p["mk125_nom"];
-}
-} 
-?>
-<h3><?php echo $total; ?><?php echo $mk125_Codigo; ?>-<?php echo $mk125_nom; ?></h3>
+                    $resultado = $db->rawQuery('SELECT COUNT( * ) AS total, codUS FROM mckay125_codigos GROUP BY codUS ORDER BY total DESC LIMIT 4');
+                    if($resultado){
+                    foreach ($resultado as $r) {
+                    $total   = $r["total"];
+                    $codUS  = $r["codUS"];
+                    $participante = $db->rawQuery("SELECT * FROM mckay125_participantes WHERE mk125_ID = $codUS");
+                    if($participante){
+                    foreach ($participante as $p) {
+                    $mk125_nom  = $p["mk125_nom"];
+                    }
+                    }
+                    ?>
 
+                         <tr>
+                           <td class="texto-amarillo text-center"><?php echo $total; ?><?php echo $mk125_Codigo; ?></td>
+                           <td><?php echo $mk125_nom; ?></td>
+                         </tr>
 
+                    <?php }
+                    } ?>
 
-
-<?php }
-} 
-
-
-?>
+                               </tbody>
+                             </table>
+                    </div>
             <!--  <?php
 		    $invisible = 0;
-		  	$resultado = $db->rawQuery('SELECT  a.mk125_nom,b.codUS 
+		  	$resultado = $db->rawQuery('SELECT  a.mk125_nom,b.codUS
 		  		FROM mckay125_participantes a ,mckay125_codigos b
 		  		WHERE a.mk125_ID=b.codID  limit 3');
 		  	if($resultado){
 				foreach ($resultado as $r) {
 					$mk125_Nombre   = $r["mk125_nom"];
 					$mk125_Codigo  = $r["codUS"];
-					
+
 					$invisible  = 1; ?>
 					<div class="table-responsive">
 					  <table class="table">
 					   <tr>
 			   				 <td><h3><?php echo $mk125_Nombre; ?></h3>
-			   	           		  
+
 			   	             <td>
 					   </tr>
 					   <tr>
@@ -268,20 +284,20 @@ $mk125_nom  = $p["mk125_nom"];
 					   </tr>
 					  </table>
 					</div>
-			
+
 
 				<?php }
-			} 
+			}
 
 
 			?> -->
-           
-
-             
-            </div>
 
 
- 
+
+
+
+
+
 
             <span class="small" style="
     color: #fff;
@@ -293,10 +309,10 @@ $mk125_nom  = $p["mk125_nom"];
     left: 0;
 "></span>
         </div>
-    	
+
     </div>
   </div> <!-- container -->
-  
+
 <!-- Modal -->
 <div class="modal fade" id="modal_mensaje" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -318,7 +334,7 @@ $mk125_nom  = $p["mk125_nom"];
        <img id="caja_suenos" class="img-responsive center-block" src="assets/img/caja_suenos.png?v=2" alt="">
       </div>
       <div class="modal-footer">
-             *<span>Guarda tus envases</span> ya que son requisito para poder canjear 
+             *<span>Guarda tus envases</span> ya que son requisito para poder canjear
 tu premio en caso de resultar ganador
       </div>
     </div> <!-- modal content -->
@@ -340,7 +356,7 @@ tu premio en caso de resultar ganador
         <p class="texto_blanco_large">¡FELICIDADES!</p>
         <p class="texto_blanco"> eres ganador de un pack de galletas mckay</p>
        <img id="pack_galletas" class="img-responsive center-block" src="assets/img/pack_galletas.png" alt="">
-         <p class="texto_blanco_med">dentro de los próximos días 
+         <p class="texto_blanco_med">dentro de los próximos días
 te contactaremos vía correo electrónico
 para coordinar la entrega de tu premio</p>
       </div>
@@ -350,12 +366,12 @@ por uno de los sueños diarios que mckay tiene para ti
       </div>
     </div> <!-- modal content -->
   </div>
-</div> <!-- modal mensaje -->  
-  
+</div> <!-- modal mensaje -->
+
 <?php include('footer.php') ?>
 
 <?php
-	
+
 	date_default_timezone_set('America/Santiago');
 	$datetime = new DateTime('tomorrow');
 ?>
@@ -369,5 +385,5 @@ por uno de los sueños diarios que mckay tiene para ti
 </script>
 
 <?
-	//} 
+	//}
 ?>
