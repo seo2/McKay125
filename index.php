@@ -75,9 +75,9 @@
 		?>
       </div>  <!-- col-sm-12 -->
     </div> <!-- row -->
-    
+
     <?php include('include-barra.php'); ?>
-    
+
     <div class="row" >
     	<div class="col-sm-6 col-sm-offset-3">
     		<img src="assets/img/txt_participa_grande.png" class="img-responsive txt_participa">
@@ -100,7 +100,7 @@
 	    ?>
         <div class="box_ganador center-block <?php if($invisible == 0){ ?>invisible<?php } ?>">
             <div class="text">
-              <h3>GANADOR <?php echo $newDate; ?></h3>
+              <h3>GANADOR <br><?php echo $newDate; ?></h3>
               <h4><?php echo $mk125_Nom; ?></h4>
             </div>
             <span class="small" style="
@@ -225,14 +225,14 @@
 
 
 
-	      <div class="box_ganador center-block <?php if($invisible == 0){ ?>invisible<?php } ?>">
+	      <div class="box_ganador2 center-block <?php if($invisible == 0){ ?>invisible<?php } ?>">
 
                     <!-- tabla participantes -->
                     <div class="table-responsive">
-                               <table id="tabla-ranking" class="table center-block">
+                               <table id="tabla-ranking" class="table">
                                  <thead>
                                    <tr>
-                                     <th>Códigos Ingresados</th>
+                                     <th class="text-center">Códigos Ingresados</th>
                                      <th>Participantes</th>
                                    </tr>
                                  </thead>
