@@ -227,6 +227,8 @@
 
 	      <div class="box_ganador2 center-block <?php if($invisible == 0){ ?>invisible<?php } ?>">
 
+
+
                     <!-- tabla participantes -->
                     <div class="table-responsive">
                                <table id="tabla-ranking" class="table">
@@ -238,30 +240,52 @@
                                  </thead>
                                  <tbody>
               <?php
-                    $resultado = $db->rawQuery('SELECT COUNT( * ) AS total, codUS FROM mckay125_codigos GROUP BY codUS ORDER BY total DESC LIMIT 10');
+
+              
+                    $resultado = $db->rawQuery('SELECT COUNT( * ) AS total,codUS,codRTS FROM mckay125_codigos GROUP BY  codUS ORDER BY total DESC LIMIT 10');
                     if($resultado){
                     foreach ($resultado as $r) {
                     $total   = $r["total"];
                     $codUS  = $r["codUS"];
-                    $participante = $db->rawQuery("SELECT * FROM mckay125_participantes WHERE mk125_ID = $codUS");
+                    $fecha=$r['codRTS'];
+                    
+                    
+                    $participante = $db->rawQuery("SELECT * FROM mckay125_participantes WHERE mk125_ID = $codUS" );
                     if($participante){
                     foreach ($participante as $p) {
                     $mk125_nom  = $p["mk125_nom"];
                     }
-                    }
-                    ?>
+                }
 
+                /*$participante=$db->rawQuery("SELECT * from mckay125_codigos where codRTS between now() and now() + interval 12 hour");  
+*/
+                  
+                 	   ?>
+ 							<?date_default_timezone_set('America/Santiago');?>
                          <tr>
-                           <td class="texto-amarillo text-center"><?php echo $total; ?><?php echo $mk125_Codigo; ?></td>
+                           <td class="texto-amarillo text-center">
+                          
+                           <?=date('d/m/y');?>
+                           <br>
+                           <?php echo $fecha; ?><br>
+                           <?php echo $total; ?><?php echo $mk125_Codigo; ?></td>
                            <td><?php echo $mk125_nom; ?></td>
+
+
+                           
+
                          </tr>
 
                     <?php }
                     } ?>
 
+
+
                                </tbody>
                              </table>
                     </div>
+
+                    <!-- fin tabla participantes -->
             <!--  <?php
 		    $invisible = 0;
 		  	$resultado = $db->rawQuery('SELECT  a.mk125_nom,b.codUS
