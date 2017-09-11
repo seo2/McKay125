@@ -391,12 +391,18 @@ $('#header2 .btnnuevomenu').on('click', function(){
 });
 
 
-
 $('#flechabaja').on('click', function(){
 	$('html, body').animate({  scrollTop: $("#franja_mobile").offset().top }, 1000);
 });
 
-
 $('#flechabaja2').on('click', function(){
 	$('html, body').animate({  scrollTop: $("#franja_participa").offset().top }, 1000);
 });
+
+
+var porcentaje = $('#grafico-interior').data('porcentaje');
+function barra(){
+	$('#grafico-interior').css({'height': porcentaje+'%'});	
+}
+setTimeout(barra, 1000);
+

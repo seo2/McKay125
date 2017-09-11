@@ -681,7 +681,6 @@ footer {
 }
 
 
-
 /* GANADORES */
 
 .ganadores{text-transform: uppercase;}
@@ -726,12 +725,41 @@ footer {
 
 
 @media (min-width: 768px){
-
-	.form-inline .form-control {
-		width: 100%;
-	}
+	.form-inline .form-control { width: 100%;}
 	.input_codigo .form-group{padding: 0 5px;}
 }
+
+
+/* SUEÑO MILLONARIO */
+
+#caja-barra{background: url(https://s219687.gridserver.com/clientes/modo/mckay/bg-sueno.jpg) center top; background-size: cover; margin-bottom: 30px;box-shadow: 2px 2px 16px 7px rgba(0, 0, 0, 0.25);}
+#logo-millonario{margin: 50px 0;}
+#txt-codigos1{margin: 40px auto 20px;}
+#txt-codigos2{margin: 20px auto 40px;}
+#grafico{border: 2px solid #fff; position: relative; height: 400px; width: 80px; margin: 0 auto; }
+#grafico-interior{position: absolute; width: 100%; bottom: 0; transition: all 0.5s ease-in-out; height: 0%;
+	background: rgba(241,231,103,1);
+	background: -moz-linear-gradient(top, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(241,231,103,1)), color-stop(100%, rgba(254,182,69,1)));
+	background: -webkit-linear-gradient(top, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+	background: -o-linear-gradient(top, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+	background: -ms-linear-gradient(top, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+	background: linear-gradient(to bottom, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645', GradientType=0;	);
+	
+}
+.codigosingresados{position: absolute; border-bottom: 2px solid; width: 150px; left: -20px;  color: #fff; }
+.codigosingresados span{position: absolute; right: -50px; top: -10px;}
+.codigosingresados span img{width: 40px;}
+#diezmil{bottom: 13.333333333333334%;}
+#veiticincomil{bottom: 33.33333333333333%}
+#cuarentaycincomil{bottom: 60%;}
+@media (max-width: 768px) {
+	#logo-millonario{margin: 0;}
+	#txt-codigos1{margin: 0 auto 20px;}
+}
+
+
 
 @media screen\0 {.form-control{padding-left: 0; }
 @media screen and (min-width:0\0) { padding-left: 0;}

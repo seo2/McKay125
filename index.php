@@ -75,6 +75,9 @@
 		?>
       </div>  <!-- col-sm-12 -->
     </div> <!-- row -->
+    
+    <?php include('include-barra.php'); ?>
+    
     <div class="row" >
     	<div class="col-sm-6 col-sm-offset-3">
     		<img src="assets/img/txt_participa_grande.png" class="img-responsive txt_participa">
@@ -95,7 +98,7 @@
 			}
 			$newDate = date("d-m-Y", strtotime($mk125_Fec));
 	    ?>
-        <!-- <div class="box_ganador center-block <?php if($invisible == 0){ ?>invisible<?php } ?>">
+        <div class="box_ganador center-block <?php if($invisible == 0){ ?>invisible<?php } ?>">
             <div class="text">
               <h3>GANADOR <?php echo $newDate; ?></h3>
               <h4><?php echo $mk125_Nom; ?></h4>
@@ -109,7 +112,7 @@
               width: 100%;
               left: 0;
           ">*Ganador sujeto a validación</span>
-        </div> -->
+        </div>
         <div class="col-md-10 col-md-offset-1">
 	        <section class="ingreso_datos hide" id="ingreso_datos">
 	              <h3>ingresa tus datos</h3>
@@ -235,7 +238,7 @@
                                  </thead>
                                  <tbody>
               <?php
-                    $resultado = $db->rawQuery('SELECT COUNT( * ) AS total, codUS FROM mckay125_codigos GROUP BY codUS ORDER BY total DESC LIMIT 4');
+                    $resultado = $db->rawQuery('SELECT COUNT( * ) AS total, codUS FROM mckay125_codigos GROUP BY codUS ORDER BY total DESC LIMIT 10');
                     if($resultado){
                     foreach ($resultado as $r) {
                     $total   = $r["total"];

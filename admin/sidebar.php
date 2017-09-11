@@ -43,6 +43,7 @@ if($_SESSION['ccid']){
 					<ul class="nav nav-sidebar">
 
 						<li><a href="index.php"><i class="icon-speedometer"></i><span class="text"> Dashboard</span></a></li>
+						<li><a href="formulario-sueno-millonario.php"><i class="icon-cloud-upload"></i><span class="text"> Sueño Millonario</span></a></li>
 						<li><a href="participantes.php"><i class="icon-speedometer"></i><span class="text"> Participantes</span></a></li>
 						<li><a href="exportar_participantes.php"><i class="icon-speedometer"></i><span class="text"> Excel Participantes</span></a></li>
 						<li><a href="exportar_codigos.php"><i class="icon-speedometer"></i><span class="text"> Excel Códigos</span></a></li>

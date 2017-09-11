@@ -45,6 +45,17 @@
 		return $instawins;
 	}
 
+	function total_suenomillonario($lol){
+		$db = new MysqliDb (DBHOST, DBUSER, DBPASS, DBNAME);
+	  	$resultado = $db->rawQuery('select count(*) as total from mckay125_sueno');
+		if($resultado){
+			foreach ($resultado as $r) {
+				$instawins   = $r["total"];
+			}
+		}   
+		return $instawins;
+	}
+
 	function total_hombres($lol){
 		$db = new MysqliDb (DBHOST, DBUSER, DBPASS, DBNAME);
 	  	$resultado = $db->rawQuery('select count(*) as total from mckay125_participantes where mk125_sexo LIKE "Hombre"');
@@ -102,6 +113,23 @@
 			}
 		}   
 		return $total;
+	}
+	
+ 	$param = $db->rawQuery("select * from mckay125_parametros where paramID = 1");
+	if($param){
+		foreach ($param as $pa) {
+			$paramDesc  = $pa["paramDesc"];
+			$paramVal  	= $pa["paramVal"];
+		}		
+			
+	}	
+	
+	if($paramVal==0){
+		$estadosueno = 'Inactivo';
+		$clase = "text-danger";
+	}else{
+		$estadosueno = 'Activo';
+		$clase = "text-success";
 	}
 	
                       
@@ -172,17 +200,17 @@
 					  	</div>
 					</div>
 				</li>
-<!--
 				<li>
-					<i class="icon-pie-chart"></i>
-					<div class="number">28%</div>
-					<div class="title">Returning Visitors</div>
+					<i class="icon-cloud-upload"></i>
+					<div class="number"><?php echo total_suenomillonario($lol); ?></div>
+					<div class="title">Sueño Millonario <span class="<?php echo $clase; ?>">[<?php echo $estadosueno; ?>]</span></div>
 					<div class="progress thin">
 					  	<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style="width: 73%">
 					    	<span class="sr-only">73% Complete (success)</span>
 					  	</div>
 					</div>
 				</li>
+<!--
 				<li>
 					<i class="icon-speedometer"></i>
 					<div class="number">5:34:11</div>
@@ -205,7 +233,7 @@
 				</li>
 -->
 			</ul>			
-			
+
 			
 			<div class="row">
 				
@@ -221,7 +249,7 @@
 						<div class="panel-body">
 
 					<?php
-							$sql = "SELECT COUNT(*) AS total,  WEEK(mk125_ts) as week_number FROM  mckay125_participantes GROUP BY WEEK(mk125_rts, 1)";
+							$sql = "SELECT COUNT(*) AS total,  WEEK(mk125_ts) as week_number FROM  mckay125_participantes GROUP BY WEEK(mk125_rts, 1) order by week_number DESC";
 								$semanas = $db->rawQuery($sql);
 								if($semanas){
 									foreach ($semanas as $s) {
@@ -259,7 +287,7 @@
 						<div class="panel-body">
 
 					<?php						
-						$sql = "SELECT COUNT(*) AS total,  WEEK(codTS) as week_number FROM mckay125_codigos GROUP BY WEEK(codRTS, 1)";
+						$sql = "SELECT COUNT(*) AS total,  WEEK(codTS) as week_number FROM mckay125_codigos GROUP BY WEEK(codRTS, 1) order by week_number DESC";
 								$semanas = $db->rawQuery($sql);
 								if($semanas){
 									foreach ($semanas as $s) {

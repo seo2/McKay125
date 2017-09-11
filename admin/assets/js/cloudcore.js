@@ -281,6 +281,41 @@ $('#btnSorteo1').on('click',function(e){
 });
 
 
+$("#formSueno").validate({
+	  submitHandler: function(form) {
+		$("#btnSubir").html('<i class="fa fa fa-spinner fa-spin"></i>');
+
+		var data = $('#formSueno').serialize();
+
+		$.ajax({
+            type: "POST",
+            url: "ajax/sueno.php",
+            data: data,
+            success: function(msg) {
+				console.log(msg);
+            	if(msg=='ok'){
+            						
+	            	swal({   title: "¡Excelente!",   text: "Se ha modificado el estado",   type: "success",     confirmButtonColor: "#DD6B55",   confirmButtonText: "OK",   cancelButtonText: "Ir a lista de requerimientos",  showCancelButton: false,   closeOnConfirm: false,   closeOnCancel: false , allowOutsideClick: true}, 
+	            	function(isConfirm){   
+	            	if (isConfirm) {  
+	            		window.location.replace("index.php");   
+	            	} else {     
+	            		window.location.replace(sitio+"/tareas.php");      
+	            	} });
+            	}else{
+					swal('Ha ocurrido un error, por favor vuelva a intentarlo.');
+            	}
+            	$("#btnSubir").html('<i class="fa fa-dot-circle-o"></i> Guardar');
+            	
+            },
+            error: function(xhr, status, error) {
+				//alert(status);
+			}
+		
+		
+		});
+	}
+}); // fin validate
 
 
 

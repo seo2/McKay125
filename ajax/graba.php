@@ -101,8 +101,19 @@ function validateAge2($birthday, $age = 100)
 					"codRTS" 	=> $ahora
 				);
 				
-				$id = $db->insert ('mckay125_codigos', $data);
+				$id 	= $db->insert ('mckay125_codigos', $data);
 				
+				// inicio sueño millonario //
+				$parametros	= $db->rawQuery('select * from mckay125_parametros where paramID = 1');
+				if($parametros){
+					foreach ($parametros as $pa) {
+						$graba = $pa['paramVal'];
+					}
+				}  		
+				if($graba==1){
+					$id = $db->insert ('mckay125_sueno', $data);
+				}		
+				// fin sueño millonario //
 				
 				if($id){
 								
