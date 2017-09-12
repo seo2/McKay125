@@ -402,7 +402,7 @@ $('#flechabaja2').on('click', function(){
 
 var porcentaje = $('#grafico-interior').data('porcentaje');
 function barra(){
-	$('#grafico-interior').css({'height': porcentaje+'%'});	
+	$('#grafico-interior').css({'width': porcentaje+'%'});	
 }
 setTimeout(barra, 1000);
 

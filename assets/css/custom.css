@@ -764,12 +764,12 @@ footer {
 
 /* SUEÑO MILLONARIO */
 
-#caja-barra{background: url(https://s219687.gridserver.com/clientes/modo/mckay/bg-sueno.jpg) center top; background-size: cover; margin-bottom: 30px;box-shadow: 2px 2px 16px 7px rgba(0, 0, 0, 0.25);}
-#logo-millonario{margin: 50px 0;}
+#caja-barra{margin-bottom: 30px;}
+#logo-millonario{margin: 0;}
 #txt-codigos1{margin: 40px auto 20px;}
-#txt-codigos2{margin: 20px auto 40px;}
-#grafico{border: 2px solid #fff; position: relative; height: 400px; width: 80px; margin: 0 auto; }
-#grafico-interior{position: absolute; width: 100%; bottom: 0; transition: all 0.5s ease-in-out; height: 0%;
+#txt-codigos2{ position: absolute; top: -20px; width: 170px; right: 0;}
+#grafico{border: 2px solid #fff; position: relative; height: 120px; width: 90%; }
+#grafico-interior{position: absolute; height: 100%; bottom: 0; transition: all 0.5s ease-in-out; width: 0%;
 	background: rgba(241,231,103,1);
 	background: -moz-linear-gradient(top, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
 	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(241,231,103,1)), color-stop(100%, rgba(254,182,69,1)));
@@ -780,15 +780,20 @@ footer {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645', GradientType=0;	);
 
 }
-.codigosingresados{position: absolute; border-bottom: 2px solid; width: 150px; left: -20px;  color: #fff; }
-.codigosingresados span{position: absolute; right: -50px; top: -10px;}
-.codigosingresados span img{width: 40px;}
-#diezmil{bottom: 13.333333333333334%;}
-#veiticincomil{bottom: 33.33333333333333%}
-#cuarentaycincomil{bottom: 60%;}
+.codigosingresados{position: absolute; border-left: 2px solid; height: 160px; top: -20px;  color: #fff; }
+.codigosingresados span{position: absolute; right: -50px; bottom: -40px; text-transform: uppercase;width: 100px;}
+.codigosingresados span small{}
+#diezmil{left: 13.333333333333334%;}
+#veiticincomil{left: 33.33333333333333%}
+#cuarentaycincomil{left: 60%;}
 @media (max-width: 768px) {
+	#caja-barra{margin-bottom: 60px;}
 	#logo-millonario{margin: 0;}
-	#txt-codigos1{margin: 0 auto 20px;}
+	#grafico{ height: 70px;}
+	.codigosingresados{height: 100px;}
+	.codigosingresados span {bottom: -36px; line-height: 90%;font-size: 73%; }
+	#txt-codigos2{width: 115px;}
+	#contador{margin-bottom: 0;}
 }
 
 

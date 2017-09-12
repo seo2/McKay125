@@ -36,6 +36,6 @@
    <script src="assets/js/moment-timezone.js"></script>
    <script src="assets/js/jquery.countdown.min.js"></script>
 	
-    <script src="assets/js/mckay.js?v=2.1.7"></script>
+    <script src="assets/js/mckay.js?v=2.1.8"></script>
   </body>
 </html>

@@ -46,6 +46,10 @@
  	   		<div class="col-xs-12 text-center laflechita hidden-xs">
 	  			<a href="javascript:void(0);"><img src="assets/img/mobile_flecha.png" class="" id="flechabaja2"></a>
 	  		</div>
+	  		
+
+    <?php include('include-barra.php'); ?>
+	  		
 
   <div id="franja_participa" class="hidden-xs">
   	<div class="container">
@@ -76,7 +80,6 @@
       </div>  <!-- col-sm-12 -->
     </div> <!-- row -->
 
-    <?php include('include-barra.php'); ?>
 
     <div class="row" >
     	<div class="col-sm-6 col-sm-offset-3">
