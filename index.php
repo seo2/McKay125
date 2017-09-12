@@ -228,6 +228,8 @@
 
 
 
+
+
 	      <div class="box_ganador2 center-block <?php if($invisible == 0){ ?>invisible<?php } ?>">
 
 
@@ -245,12 +247,16 @@
               <?php
 
               
-                    $resultado = $db->rawQuery('SELECT COUNT( * ) AS total,codUS,codRTS FROM mckay125_codigos GROUP BY  codUS ORDER BY total DESC LIMIT 10');
+                    $resultado = $db->rawQuery('SELECT COUNT( * ) AS total,codUS,codRTS FROM mckay125_codigos where codRTS >= CURDATE() GROUP BY  codUS ORDER BY total DESC LIMIT 10');
                     if($resultado){
                     foreach ($resultado as $r) {
                     $total   = $r["total"];
                     $codUS  = $r["codUS"];
                     $fecha=$r['codRTS'];
+
+
+
+                    
                     
                     
                     $participante = $db->rawQuery("SELECT * FROM mckay125_participantes WHERE mk125_ID = $codUS" );
@@ -261,22 +267,16 @@
                 }
 
                 /*$participante=$db->rawQuery("SELECT * from mckay125_codigos where codRTS between now() and now() + interval 12 hour");  
-*/
-                  
+*/						
+
                  	   ?>
  							<?date_default_timezone_set('America/Santiago');?>
                          <tr>
                            <td class="texto-amarillo text-center">
-                          
-                           <?=date('d/m/y');?>
-                           <br>
-                           <?php echo $fecha; ?><br>
-                           <?php echo $total; ?><?php echo $mk125_Codigo; ?></td>
-                           <td><?php echo $mk125_nom; ?></td>
-
-
                            
-
+                          <?php echo $total; ?><?php echo $mk125_Codigo; ?>
+                           <br>
+                           <td><?php echo $mk125_nom; ?></td>
                          </tr>
 
                     <?php }
@@ -287,47 +287,6 @@
                                </tbody>
                              </table>
                     </div>
-
-                    <!-- fin tabla participantes -->
-            <!--  <?php
-		    $invisible = 0;
-		  	$resultado = $db->rawQuery('SELECT  a.mk125_nom,b.codUS
-		  		FROM mckay125_participantes a ,mckay125_codigos b
-		  		WHERE a.mk125_ID=b.codID  limit 3');
-		  	if($resultado){
-				foreach ($resultado as $r) {
-					$mk125_Nombre   = $r["mk125_nom"];
-					$mk125_Codigo  = $r["codUS"];
-
-					$invisible  = 1; ?>
-					<div class="table-responsive">
-					  <table class="table">
-					   <tr>
-			   				 <td><h3><?php echo $mk125_Nombre; ?></h3>
-
-			   	             <td>
-					   </tr>
-					   <tr>
-					   	<td>
-					   		<h3><?php echo $mk125_Codigo; ?></h3>
-					   	</td>
-					   </tr>
-					  </table>
-					</div>
-
-
-				<?php }
-			}
-
-
-			?> -->
-
-
-
-
-
-
-
 
             <span class="small" style="
     color: #fff;
