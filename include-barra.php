@@ -15,7 +15,7 @@
 		}
 	}   
 	
-	$porcentaje = (100 * $instawins) / 75000;
+	$porcentaje = (100 * ($instawins + 2483)) / 75000;
 	
 ?>
 					<div id="grafico-interior" data-total="8000" data-porcentaje="<?php echo $porcentaje; ?>">

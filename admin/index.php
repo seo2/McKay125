@@ -50,7 +50,7 @@
 	  	$resultado = $db->rawQuery('select count(*) as total from mckay125_sueno');
 		if($resultado){
 			foreach ($resultado as $r) {
-				$instawins   = $r["total"];
+				$instawins   = $r["total"] + 2483;
 			}
 		}   
 		return $instawins;
