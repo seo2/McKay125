@@ -1,8 +1,8 @@
 <?php
 
 	define("DBHOST", "internal-db.s92700.gridserver.com");
-	define("DBUSER", "db92700_seo2");
-	define("DBPASS", "lD>60i1P957aSnM.");
+	define("DBUSER", "db92700");
+	define("DBPASS", "]!elE5tS8b");
 	define("DBNAME", "db92700_seo2");
 
 ?>

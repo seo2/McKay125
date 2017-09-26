@@ -48,7 +48,7 @@
 	  		</div>
 	  		
 
-    <?php include('include-barra.php'); ?>
+    <?php //include('include-barra.php'); ?>
 	  		
 
   <div id="franja_participa" class="hidden-xs">
@@ -86,6 +86,9 @@
     		<img src="assets/img/txt_participa_grande.png" class="img-responsive txt_participa">
     	</div>
     </div>
+    <?php 
+	    $invisible = 1;
+	    include('include-ranking.php'); ?>
     <div class="row">
 	    <?php
 		    $invisible = 0;
@@ -223,83 +226,8 @@
 
 
     <!---row nueva -->
-    <div class="row">
-    <img id="tit-sonadores" class="img-responsive center-block" src="assets/img/tit-ranking.png" alt="ranking de soñadores" title="ranking de soñadores">
 
-
-
-
-
-	      <div class="box_ganador2 center-block <?php if($invisible == 0){ ?>invisible<?php } ?>">
-
-
-
-                    <!-- tabla participantes -->
-                    <div class="table-responsive">
-                               <table id="tabla-ranking" class="table">
-                                 <thead>
-                                   <tr>
-                                     <th class="text-center">Códigos Ingresados</th>
-                                     <th>Participantes</th>
-                                   </tr>
-                                 </thead>
-                                 <tbody>
-              <?php
-
-              
-                    $resultado = $db->rawQuery('SELECT COUNT( * ) AS total,codUS,codRTS FROM mckay125_codigos where codRTS >= CURDATE() GROUP BY  codUS ORDER BY total DESC LIMIT 10');
-                    if($resultado){
-                    foreach ($resultado as $r) {
-                    $total   = $r["total"];
-                    $codUS  = $r["codUS"];
-                    $fecha=$r['codRTS'];
-
-
-
-                    
-                    
-                    
-                    $participante = $db->rawQuery("SELECT * FROM mckay125_participantes WHERE mk125_ID = $codUS" );
-                    if($participante){
-                    foreach ($participante as $p) {
-                    $mk125_nom  = $p["mk125_nom"];
-                    }
-                }
-
-                /*$participante=$db->rawQuery("SELECT * from mckay125_codigos where codRTS between now() and now() + interval 12 hour");  
-*/						
-
-                 	   ?>
- 							<?date_default_timezone_set('America/Santiago');?>
-                         <tr>
-                           <td class="texto-amarillo text-center">
-                           
-                          <?php echo $total; ?><?php echo $mk125_Codigo; ?>
-                           <br>
-                           <td><?php echo $mk125_nom; ?></td>
-                         </tr>
-
-                    <?php }
-                    } ?>
-
-
-
-                               </tbody>
-                             </table>
-                    </div>
-
-            <span class="small" style="
-    color: #fff;
-    bottom: 10px;
-    position: absolute;
-    display: block;
-    text-align: center;
-    width: 100%;
-    left: 0;
-"></span>
-        </div>
-
-    </div>
+    
   </div> <!-- container -->
 
 <!-- Modal -->

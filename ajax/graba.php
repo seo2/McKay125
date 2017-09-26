@@ -111,7 +111,7 @@ function validateAge2($birthday, $age = 100)
 					}
 				}  		
 				if($graba==1){
-					$id = $db->insert ('mckay125_sueno', $data);
+					$idsueno = $db->insert ('mckay125_sueno', $data);
 				}		
 				// fin sueño millonario //
 				
