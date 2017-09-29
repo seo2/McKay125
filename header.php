@@ -35,7 +35,7 @@
     <link href="assets/css/owl.theme.default.css" rel="stylesheet">
     <link href="assets/css/bootstrap.offcanvas.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
-    <link href="assets/css/custom.css?v=2.2.4" rel="stylesheet">
+    <link href="assets/css/custom.css?v=2.2.5" rel="stylesheet">
     <link rel="shortcut icon" href="assets/img/favicon.ico">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
