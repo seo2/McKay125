@@ -92,7 +92,7 @@
     <div class="row">
 	    <?php
 		    $invisible = 0;
-		  	$resultado = $db->rawQuery('select * from mckay125_ganadores order by ganiD DESC limit 1');
+		  	$resultado = $db->rawQuery('select * from mckay125_ganadores order by ganID DESC limit 1');
 			if($resultado){
 				foreach ($resultado as $r) {
 					$mk125_ID   = $r["ganID"];
